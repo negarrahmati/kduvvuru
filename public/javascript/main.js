@@ -9,6 +9,7 @@
   var username;
 
   $(document).ready(function(){
+      
     connect_to_chat_firebase();
     connect_webcam();
     $("#num_requests").text(counter);
@@ -25,8 +26,6 @@
     }else{
       fb_chat_room_id = Math.random().toString(36).substring(7);
     }
-     display_msg({m:"Share this url with your friend to join this chat: "+ document.location.origin+"/#"+fb_chat_room_id,c:"red"})
-
     // set up variables to access firebase data structure
     var fb_new_chat_room = fb_instance.child('chatrooms').child(fb_chat_room_id);
     var fb_instance_users = fb_new_chat_room.child('users');
@@ -69,13 +68,16 @@
     if(!username){
       username = "anonymous"+Math.floor(Math.random()*1111);
     }
-    alert("Welcome to CandidCam Chatroom, " + username + "! Before you go in, know that you can't hide your true colors here! You and your chat partners get three chances to request a real-time video of each other's reaction. If you run out of reaction requests, you must wait until your chat partner requests your reaction before you can request again. Once you enable your camera in the beginning, there's no going back ;) Get ready to get candid, and have fun!")
 
+    alert("Welcome to CandidCam, "+ username + "!\nHow it works:\nYou and your chat partner each get three chances to request a real-time video of the other's reaction.\nShare this url with your friend to join the chat and get started!");
+    $("#submission").show();
+    $("request_counter").show();
+    
     fb_instance_users.push({ name: username,c: my_color});
     $("#waiting").remove();
 
     // bind submission box
-    $("#submission input").keydown(function( event ) {
+    $("#submission #response").keydown(function( event ) {
       var re = new RegExp("request");
       if (event.which == 13) {
 //        if(($(this).val()).search(re) != -1){

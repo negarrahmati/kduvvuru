@@ -5898,6 +5898,7 @@ button.close {
   height: 100%;
 }
 #submission {
+  display: none;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -5937,6 +5938,7 @@ button.close {
   margin-right: 10px;
 }
 #request_counter {
+  display: none;
   width: 300px;
   text-align: center;
   color: white;
@@ -5951,4 +5953,7 @@ button.close {
 #info {
   left: 21%;
   position: absolute;
+}
+.msg {
+  font-size: 15px;
 }

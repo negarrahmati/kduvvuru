@@ -1,0 +1,38 @@
+<html lang="en">
+  <body>
+    <div id="waiting">Connecting to chat server...</div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>CandidCam</h1>
+        <p>You can't hide your true colors here ;) Allow access to your camera to enable reaction requests and let the fun begin!</p>
+      </div>
+    </div>
+    <div class="jumbotron" id="message_area">
+      <div class="row container" id="info">
+      <div id="stream" class="col-md-4">
+        <div id="webcam_stream"></div>
+      </div>
+      <div class="col-md-4" id="notification_center">
+        <p id="notification"></p>
+      </div>      
+      <div class="col-md-4" id="request_counter">
+        <h3># Reaction Requests Left:</h3><p id="num_requests"></p>
+      </div>
+      </div class="container">
+    </div>
+    <div class="container" id="conversation">
+      <div class="row">
+      </div>
+    </div>
+    <div class="jumbotron" id="submission">
+      <div class="container">
+        <input id="response" type="text" placeholder="say something..">
+        <label id="checkbox">
+          <input id="request" type="checkbox"><p>Request real-time video of your friend's reaction to this message!<p>
+        </label>
+      </div>
+    </div>
+    <div id="video_container"></div>
+  </body>
+</html>
